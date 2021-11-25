@@ -18,5 +18,13 @@ Current sorting algorithms implemented: bubble sort, insertion sort, selection s
 1. Program requires python version 3.0 and newer. 
 2. Program requires Matplotlib dependency installed.
 
+# Run the Program
+1. Open the terminal with where main program file exists.
+2. Python3 main3.py (main program file)
+
+# Test the program
+1. The algorithm should be visually correctly implemented. 
+2. Final data points shall be all sorted. 
+
 # Coding Standard
 The program is implemented using python, and please kindly refer to [Python Standards](https://www.python.org/dev/peps/pep-0008/)
