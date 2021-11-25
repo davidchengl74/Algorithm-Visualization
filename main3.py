@@ -1,7 +1,5 @@
 
-#CPSC 335 
-#Daiwei Chen
-#Kim Eaton
+#CPSC Algorithm Class
 
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -61,7 +59,6 @@ def insertionsort(a):
         yield a
 
 # selection sort
-
 def selectionsort(a):
     for i in range(len(a)):
         min_idx = i
@@ -73,7 +70,6 @@ def selectionsort(a):
         yield a
 
 # shell sort
-
 def shellsort(a):
     gap = len(a) // 2
 
