@@ -12,7 +12,9 @@ Current sorting algorithms implemented: bubble sort, insertion sort, selection s
 # How to Contribute
 1. Please kindly reply to one of the open issues.
 2. Fork the project and program. 
-3. Submit pull request for the issue for review and merge. 
+3. Implement additional sorting algorithm.
+4. Implement additional subplot(s) that runs concurrently.
+5. Submit pull request for the issue for review and merge. 
 
 # Program set up
 1. Program requires python version 3.0 and newer. 
