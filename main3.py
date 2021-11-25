@@ -99,7 +99,6 @@ def shellsort(a):
         yield a
 
 # bubblesort
-
 def bubblesort(a):
     n = len(a)
     for i in range(n-1):
@@ -114,10 +113,10 @@ def bubblesort(a):
 if m==1:
     generator= insertionsort(a)
     plottype= "Running Insertion Sort"
-if m ==2:
+if m==2:
     generator = selectionsort(a)
     plottype = "Running Selection Sort"
-if m== 3:
+if m==3:
     generator = shellsort(a)
     plottype = "Running Shell Sort"
 if m==4:
