@@ -27,4 +27,4 @@ Current sorting algorithms implemented: bubble sort, insertion sort, selection s
 2. Final data points shall be all sorted. 
 
 # Coding Standard
-The program is implemented using python, and please kindly refer to [Python Standards](https://www.python.org/dev/peps/pep-0008/)
+The program is implemented using python, and please kindly refer to [Python Standard](https://www.python.org/dev/peps/pep-0008/)
