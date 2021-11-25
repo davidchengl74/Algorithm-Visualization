@@ -10,7 +10,7 @@ Current sorting algorithms implemented: bubble sort, insertion sort, selection s
 ![image](https://user-images.githubusercontent.com/60247861/143500299-61c17b72-b7f5-47c1-bf18-fca9544561ef.png)
 
 # How to Contribute
-1. Please kindly reply to one of the open issue.
+1. Please kindly reply to one of the open issues.
 2. Fork the project and program. 
 3. Submit pull request for the issue for review and merge. 
 
