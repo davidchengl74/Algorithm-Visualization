@@ -42,6 +42,7 @@ print("\nInsertion sort = 1\n")
 print("Selection Sort = 2\n")
 print("Shellsort = 3\n")
 print("Bubblesort = 4\n")
+print("Mergesort = 5\n")
 m=int(input("Enter a sort type\n"))
 
 
@@ -108,6 +109,37 @@ def bubblesort(a):
                 a[j],a[j+1] = a[j+1],a[j]
                 yield a
 
+# Merge sort
+def mergeSort(a):
+    size = len(a)
+    result = []
+    for i in range(size):
+        result.append([])
+        result[i].append(a[i])
+
+    while size > 1:
+        i = 0
+        j = 0
+        temp = []
+        while i < size // 2:
+            temp.append([])
+            temp[i].extend(result[j])
+            temp[i].extend(result[j + 1])
+            temp[i].sort()
+            yield sum(temp,[])
+            i += 1
+            j += 2
+            
+        if size % 2 == 1:
+            temp.append([])
+            temp[i].extend(result[j])
+            yield sum(temp,[])
+            size = size // 2 + 1
+        else:
+            size = size // 2
+
+        result = list(temp)
+        yield sum(result,[])
 
 # generator object returned by the function
 if m==1:
@@ -122,6 +154,10 @@ if m==3:
 if m==4:
     generator = bubblesort(a)
     plottype = "Running Bubble Sort"
+if m == 5:
+    generator = mergeSort(a)
+    plottype = "Running Merge Sort"
+    
 generator == shellsort(a)
 
 # to set the colors of the bars.
