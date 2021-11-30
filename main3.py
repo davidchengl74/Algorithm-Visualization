@@ -42,7 +42,7 @@ print("\nInsertion sort = 1\n")
 print("Selection Sort = 2\n")
 print("Shellsort = 3\n")
 print("Bubblesort = 4\n")
-print("Quicksort = 5\n")
+print("Quicksort = 7\n")
 m=int(input("Enter a sort type\n"))
 
 
@@ -143,7 +143,7 @@ if m==3:
 if m==4:
     generator = bubblesort(a)
     plottype = "Running Bubble Sort"
-if m==5:
+if m==7:
     generator = quicksort(a, 0, n-1)
     plottype = "Running Quick Sort"
 generator == shellsort(a)
