@@ -42,6 +42,8 @@ print("\nInsertion sort = 1\n")
 print("Selection Sort = 2\n")
 print("Shellsort = 3\n")
 print("Bubblesort = 4\n")
+
+
 print("Quicksort = 7\n")
 m=int(input("Enter a sort type\n"))
 
