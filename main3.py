@@ -1,4 +1,5 @@
 
+
 #CPSC Algorithm Class
 
 import matplotlib.pyplot as plt
@@ -42,6 +43,7 @@ print("\nInsertion sort = 1\n")
 print("Selection Sort = 2\n")
 print("Shellsort = 3\n")
 print("Bubblesort = 4\n")
+print("QuickSort 3 Way = 5\n")
 m=int(input("Enter a sort type\n"))
 
 
@@ -108,6 +110,48 @@ def bubblesort(a):
                 a[j],a[j+1] = a[j+1],a[j]
                 yield a
 
+# Quick Sort 3-Way
+def quicksort3(a):
+    f =  0
+    l = len(a) - 1
+    quicksort3Helper(a, f, l)
+
+def swap (a, i , j):
+    temp = a[i]
+    a[i] = a[j]
+    a[j] = temp
+#Quick Sort 3 -way helper function
+def quicksort3Helper(a, f , l):
+    if (f >= l):
+        return
+    if (f - l == 1):
+        if a[f] < a[l]:
+            swap(a, f, l)
+        return
+    
+    x, y = quicksort3Partition(a, f, l)
+    quicksort3Helper(a, f, x)
+    quicksort3Helper(a, y, l)
+#quicksort 3 way partition
+def quicksort3Partition(a, f, l):
+    mid = f
+    pivot = a[l]
+
+    while mid <= l:
+        if a[mid] < pivot:
+            swap(a, f, mid)
+            f += 1
+            mid += 1
+        elif a[mid]  > pivot:
+            swap(a, mid, l)
+            l -=1
+        else:
+            mid +=1
+    return f - 1, mid
+
+  
+
+          
 
 # generator object returned by the function
 if m==1:
@@ -122,7 +166,11 @@ if m==3:
 if m==4:
     generator = bubblesort(a)
     plottype = "Running Bubble Sort"
-generator == shellsort(a)
+if m==5:
+    generator = quicksort3(a)
+    plottype = "Running Quick Sort 3 Ways"
+
+#generator == shellsort(a)
 
 # to set the colors of the bars.
 data_normalizer = mp.colors.Normalize()
@@ -163,7 +211,6 @@ def animate(A, rects, iteration):
     # to the value of the elements
     for rect, val in zip(rects, A):
         rect.set_height(val)
-
     iteration[0] += 1
     text.set_text("iterations : {}".format(iteration[0]))
 
