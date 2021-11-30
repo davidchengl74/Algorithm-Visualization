@@ -170,7 +170,7 @@ if m==5:
     generator = quicksort3(a)
     plottype = "Running Quick Sort 3 Ways"
 
-#generator == shellsort(a)
+generator == shellsort(a)
 
 # to set the colors of the bars.
 data_normalizer = mp.colors.Normalize()
