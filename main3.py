@@ -43,6 +43,7 @@ print("Selection Sort = 2\n")
 print("Shellsort = 3\n")
 print("Bubblesort = 4\n")
 print("Mergesort = 5\n")
+print("Quicksort = 6\n")
 m=int(input("Enter a sort type\n"))
 
 
@@ -142,6 +143,24 @@ def mergeSort(a):
         yield sum(result,[])
 
 
+#Quicksort
+def quicksort(a, l ,r):
+    if l >= r:
+        return
+    x = a[l]
+    j = l
+    for i in range(l + 1, r + 1):
+        if a[i] <= x:
+            j += 1
+            a[j], a[i] = a[i], a[j]
+        yield a
+    a[l], a[j] = a[j], a[l]
+    yield a
+
+    yield from quicksort(a, l, j - 1)
+    yield from quicksort(a, j + 1, r)
+
+
 # generator object returned by the function
 if m==1:
     generator= insertionsort(a)
@@ -155,10 +174,13 @@ if m==3:
 if m==4:
     generator = bubblesort(a)
     plottype = "Running Bubble Sort"
-generator == shellsort(a)
+    #generator == shellsort(a)
 if m == 5:
     generator = mergeSort(a)
     plottype = "Running Merge Sort"
+if m == 6:
+    generator = mergeSort(a)
+    plottype = "Running QuickSort Sort"
 
 # to set the colors of the bars.
 data_normalizer = mp.colors.Normalize()
