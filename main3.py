@@ -45,6 +45,7 @@ print("Shellsort = 3\n")
 print("Bubblesort = 4\n")
 print("Mergesort = 5\n")
 print("Quicksort = 6\n")
+print("Quicksort 3-Way = 7\n")
 m=int(input("Enter a sort type\n"))
 
 
@@ -161,6 +162,46 @@ def quicksort(a, l ,r):
     yield from quicksort(a, l, j - 1)
     yield from quicksort(a, j + 1, r)
 
+# Quick Sort 3-Way
+def quicksort3(a):
+    f =  0
+    l = len(a) - 1
+    quicksort3Helper(a, f, l)
+
+def swap (a, i , j):
+    temp = a[i]
+    a[i] = a[j]
+    a[j] = temp
+#Quick Sort 3 -way helper function
+def quicksort3Helper(a, f , l):
+    if (f >= l):
+        return
+    if (f - l == 1):
+        if a[f] < a[l]:
+            swap(a, f, l)
+        return
+
+    x, y = quicksort3Partition(a, f, l)
+    quicksort3Helper(a, f, x)
+    quicksort3Helper(a, y, l)
+#quicksort 3 way partition
+def quicksort3Partition(a, f, l):
+    mid = f
+    pivot = a[l]
+
+    while mid <= l:
+        if a[mid] < pivot:
+            swap(a, f, mid)
+            f += 1
+            mid += 1
+        elif a[mid]  > pivot:
+            swap(a, mid, l)
+            l -=1
+        else:
+            mid +=1
+    return f - 1, mid
+
+
 
 # generator object returned by the function
 if m==1:
@@ -182,6 +223,10 @@ if m == 5:
 if m == 6:
     generator = mergeSort(a)
     plottype = "Running QuickSort Sort"
+
+if m == 7:
+    generator = mergeSort(a)
+    plottype = "Running QuickSort 3-Way Sort"
 
 # to set the colors of the bars.
 data_normalizer = mp.colors.Normalize()
